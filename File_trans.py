@@ -1,5 +1,5 @@
 #/usr/bin/env python2
-#encoding=utf8
+#coding=utf8
 import httplib
 import hashlib
 import urllib
