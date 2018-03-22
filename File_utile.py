@@ -6,9 +6,9 @@ import re
 #import subprocess
 
 def update_file(old_file, new_file):
-'''
-update new_file base on old_file
-'''
+    '''
+    update new_file base on old_file
+    '''
     add_count = 0
     sub_count = 0
     fp_o = open(old_file, 'r')
@@ -36,9 +36,9 @@ update new_file base on old_file
         print sign,'\t',e
 
 def update_lf(list_file, old_path, new_path):
-'''
-update file form old_path to new_path which in list_file
-'''
+    '''
+    update file form old_path to new_path which in list_file
+    '''
     if old_path[-1] != '\\':
         old_path = old_path + '\\'
     if new_path[-1] != '\\':
@@ -48,9 +48,9 @@ update file form old_path to new_path which in list_file
         update_file(old_path+i, new_path+i)
 
 def correct_file(file, correct_dict):
-'''
-correct file use correct_dict
-'''
+    '''
+    correct file use correct_dict
+    '''
     fp_r = open(file, 'r')
     str_f = fp_r.read().strip()
     fp_w = open(file, 'w')
@@ -63,18 +63,18 @@ correct file use correct_dict
     fp_r.close()
 
 def correct_lf(list_file, path, correct_dict):
-'''
-correct file in list_file
-'''
+    '''
+    correct file in list_file
+    '''
     if path[-1] != '\\':
         path = path + '\\'
     for i in list_file:
         correct_file(path+i, correct_dict)
 
 def move_file(src_path, dst_path, list_file):
-'''
-copy file form src_path to dst_path which in list_file
-'''
+    '''
+    copy file form src_path to dst_path which in list_file
+    '''
     if src_path[-1] != '\\':
         src_path = src_path + '\\'
     if dst_path[-1] != '\\':
@@ -91,10 +91,10 @@ copy file form src_path to dst_path which in list_file
 
 
 def filter(l1, l2, fp, check_path):
-'''
-filter two dir file, and write to fp; 
-return 1:done, 0:no_done
-'''
+    '''
+    filter two dir file, and write to fp; 
+    return 1:done, 0:no_done
+    '''
     if len(l1) == 0: return 1
     if len(l2) == 0: return 1
     for i in l1:
@@ -111,9 +111,9 @@ return 1:done, 0:no_done
 
 
 def check_empty(file, check_path):
-'''
-check files in path whether empty
-'''
+    '''
+    check files in path whether empty
+    '''
     if check_path[-1] != '\\':
         check_path = check_path + '\\'
     fp = open(check_path + file, 'r')
